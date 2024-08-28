@@ -1,0 +1,12 @@
+.main {
+  padding-top: calc($header-inner-height + 2* $header-padding-y);
+  .main-home {
+    background: $bg-primary;
+  }
+}
+
+@include media('large') {
+  .main {
+    padding-top: calc($header-inner-height-lg + 2 * $header-padding-y-lg);
+  }
+}
