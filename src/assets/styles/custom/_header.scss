@@ -1,7 +1,6 @@
 .header {
-  background: $bg-primary;
-
   padding: $header-padding-y 0;
+  background: $bg-secondary;
 
   .container {
     min-height: $header-inner-height;
@@ -51,6 +50,7 @@
 @include media('large') {
   .header {
     padding: $header-padding-y-lg 0;
+    background: $bg-primary;
     &__logo {
       width: 40px;
       height: 40px;
