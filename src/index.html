@@ -14,51 +14,94 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <!--  Styles -->
-    <link rel="stylesheet" href="./assets/styles/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/styles/vendor/bootstrap/bootstrap-grid.min.css">
     <link rel="stylesheet" href="./assets/styles/styles.min.css">
 </head>
 <body>
-<header class="header fixed-top">
+<header class="header">
     <div class="container">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand d-lg-none" href="#">
-                    <img src="./assets/images/logo.svg" alt="logotype" class="header__logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-lg-center" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Consultation</a>
-                        </li>
-                        <li class="nav-item d-none d-lg-flex">
-                            <a class="navbar-brand" href="#">
-                                <img src="./assets/images/logo.svg" alt="logotype" class="header__logo">
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div class="header__inner">
+            <a class="header__logo d-lg-none" href="#">
+                <img src="./assets/images/logo.svg" alt="logotype">
+            </a>
+            <nav class="header__nav">
+                <ul class="header__nav-items">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">Services</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">Consultation</a>
+                    </li>
+                    <li class="header__nav-item d-none d-lg-block">
+                        <a class="header__logo" href="#">
+                            <img src="./assets/images/logo.svg" alt="logotype">
+                        </a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">Projects</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </nav>
+            <button
+                    id="mobile-nav-button"
+                    class="header__mobile-nav"
+            >
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
+    <div class="header__overlay header__overlay--active"></div>
 </header>
+<!--<header class="header fixed-top">-->
+<!--    <div class="container">-->
+<!--        <nav class="navbar">-->
+<!--            <div class="container-fluid d-flex justify-content-lg-between align-items-lg-center">-->
+<!--                <a class="navbar-brand d-lg-none" href="#">-->
+<!--                    <img src="./assets/images/logo.svg" alt="logotype" class="header__logo">-->
+<!--                </a>-->
+<!--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
+<!--                <div class="collapse navbar-collapse d-flex justify-content-lg-center" id="navbarSupportedContent">-->
+<!--                    <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-lg-center">-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">Services</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">Consultation</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item d-none d-lg-flex">-->
+<!--                            <a class="navbar-brand" href="#">-->
+<!--                                <img src="./assets/images/logo.svg" alt="logotype" class="header__logo">-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">Projects</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">Contact</a>-->
+<!--                        </li>-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" href="#">About</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--</header>-->
 <main class="main">
     <div class="main-home">
         <div class="container">
@@ -107,7 +150,6 @@
     </div>
 </main>
 <script src="./assets/scripts/vendor/jquery/jquery-3.7.1.min.js"></script>
-<script src="./assets/scripts/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="./assets/scripts/scripts.min.js"></script>
+<script type="module" src="./assets/scripts/scripts.min.js"></script>
 </body>
 </html>

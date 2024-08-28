@@ -1,2 +1,7 @@
 @import 'base/base';
 @import 'custom/custom';
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
