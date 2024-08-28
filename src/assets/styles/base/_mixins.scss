@@ -1,0 +1,62 @@
+//Calculate percentage of a child size to a parent size
+@function calc-per($child-size, $parent-size) {
+  @if ($parent-size == 0) {
+    @error "Parent size cannot be zero";
+  }
+  @return calc($child-size / $parent-size) * 100%;
+}
+
+//Calculate rem of a pixel size
+@function calc-rem($px) {
+  @if ($px == 0) {
+    @error "Pixel size cannot be zero";
+  }
+  @return calc($px / 16)rem;
+}
+
+//Media Queries
+$breakpoints: (
+        'small-mobile': 20rem, // 320px / 16px
+        'mobile': 23.4375rem, // 375px / 16px
+        'large-mobile': 26.5625rem, // 425px / 16px
+        'tablet': 48rem, // 768px / 16px
+        'laptop': 64rem, // 1024px / 16px
+        'desktop': 90rem, // 1440px / 16px
+        'large-desktop': 120rem, // 1920px / 16px
+        '4k-desktop': 160rem // 2560px / 16px
+);
+
+@function get-breakpoint($device) {
+  @if map-has-key($breakpoints, $device) {
+    @return map-get($breakpoints, $device);
+  } @else {
+    @error "No breakpoint defined for #{$device}";
+  }
+}
+
+@mixin media($device, $type: min) {
+  $breakpoint: get-breakpoint($device);
+
+  @if $type == min {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if $type == max {
+    $breakpoint: $breakpoint - 0.0625rem;
+
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @error "Invalid type: #{$type}. Use 'min' or 'max'.";
+  }
+}
+//Media Queries End
+@mixin link-hover {
+  transition: $transition;
+
+  &:hover {
+    color: $text-color-secondary;
+    box-shadow: 0 2px 0 0 $color-primary;
+  }
+}
