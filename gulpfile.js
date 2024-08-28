@@ -101,7 +101,7 @@ const js = () => {
         {
           mode: "development",
           output: {
-            filename: "app.min.js",
+            filename: "scripts.min.js",
           },
           module: {
             rules: [
