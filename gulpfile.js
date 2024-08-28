@@ -42,8 +42,8 @@ const path = {
   },
   watch: {
     img: `${srcFolder}/assets/images/**/*`,
-    js: `${srcFolder}/assets/scripts/scripts.js`,
-    scss: `${srcFolder}/assets/styles/styles.scss`,
+    js: `${srcFolder}/assets/scripts/**/*.js`,
+    scss: `${srcFolder}/assets/styles/**/*.scss`,
     vendorJs: `${srcFolder}/assets/scripts/vendor/**/*.js`,
     vendorCss: `${srcFolder}/assets/styles/vendor/**/*.css`,
     html: `${srcFolder}/*.html`,

@@ -16,14 +16,10 @@
 
 //Media Queries
 $breakpoints: (
-        'small-mobile': 20rem, // 320px / 16px
-        'mobile': 23.4375rem, // 375px / 16px
-        'large-mobile': 26.5625rem, // 425px / 16px
-        'tablet': 48rem, // 768px / 16px
-        'laptop': 64rem, // 1024px / 16px
-        'desktop': 90rem, // 1440px / 16px
-        'large-desktop': 120rem, // 1920px / 16px
-        '4k-desktop': 160rem // 2560px / 16px
+        'small': 576px,
+        'medium': 768px,
+        'large': 992px,
+        'xlarge': 1200px,
 );
 
 @function get-breakpoint($device) {
@@ -52,11 +48,3 @@ $breakpoints: (
   }
 }
 //Media Queries End
-@mixin link-hover {
-  transition: $transition;
-
-  &:hover {
-    color: $text-color-secondary;
-    box-shadow: 0 2px 0 0 $color-primary;
-  }
-}
