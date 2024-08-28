@@ -35,8 +35,8 @@ const path = {
     img: `${srcFolder}/assets/images/**/*`,
     js: `${srcFolder}/assets/scripts/scripts.js`,
     scss: `${srcFolder}/assets/styles/styles.scss`,
-    vendorJs: `${srcFolder}/assets/scripts/vendor/scripts.js`,
-    vendorCss: `${srcFolder}/assets/styles/vendor/styles.scss`,
+    vendorJs: `${srcFolder}/assets/scripts/vendor/**/*.js`,
+    vendorCss: `${srcFolder}/assets/styles/vendor/**/*.css`,
     html: `${srcFolder}/*.html`,
     font: `${srcFolder}/assets/fonts/**/*.*`,
   },
@@ -44,8 +44,8 @@ const path = {
     img: `${srcFolder}/assets/images/**/*`,
     js: `${srcFolder}/assets/scripts/scripts.js`,
     scss: `${srcFolder}/assets/styles/styles.scss`,
-    vendorJs: `${srcFolder}/assets/scripts/vendor/scripts.js`,
-    vendorCss: `${srcFolder}/assets/styles/vendor/styles.scss`,
+    vendorJs: `${srcFolder}/assets/scripts/vendor/**/*.js`,
+    vendorCss: `${srcFolder}/assets/styles/vendor/**/*.css`,
     html: `${srcFolder}/*.html`,
     font: `${srcFolder}/assets/fonts/**/*.*`,
   },
@@ -167,7 +167,7 @@ function watcher() {
 }
 
 //scripts
-const mainTasks = gulp.parallel(html, scss, js,  img, font);
+const mainTasks = gulp.parallel(html, scss, js, vendorJs, vendorCss,  img, font);
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
