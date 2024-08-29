@@ -86,9 +86,14 @@
   }
 
   &__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
     position: relative;
     width: 50px;
-    height: 42px;
+    height: 32px;
 
     span {
       display: inline-block;
