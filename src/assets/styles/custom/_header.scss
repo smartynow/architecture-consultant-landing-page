@@ -74,7 +74,8 @@
     &-link {
       font-family: $font-primary;
       color: $text-primary;
-      font-size: $font-size-base-lg;
+      font-size: 32px;
+      line-height: 250%;
       transition: $transition;
 
       &:hover, &.active {
@@ -173,6 +174,14 @@
         &:last-child {
           margin:0;
         }
+      }
+
+      &-link {
+        font-size: $font-size-base-lg;
+        line-height: 100%;
+        transition: $transition;
+
+        margin: 0;
       }
     }
 
