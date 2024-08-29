@@ -1,0 +1,89 @@
+.footer {
+  background: $black;
+
+  padding: 24px 0;
+}
+
+.footer__title, .footer__item, .footer__item > a, .footer__copyright {
+  font-family: $font-primary;
+  font-style: normal;
+
+  color: $white;
+}
+
+.footer__copyright {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 150%;
+  /* identical to box height, or 15px */
+
+  text-align: center;
+}
+
+.footer__logo {
+  img {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+  }
+
+  span {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 120%;
+    /* or 24px */
+
+    color: $white;
+
+
+  }
+}
+
+@include media('large') {
+  .footer {
+    padding: 40px 0;
+  }
+}
+
+.footer__list {
+}
+
+.footer__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 100%;
+
+  margin-bottom: 24px;
+}
+
+.footer__items {
+}
+
+.footer__item, .footer__item > a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  margin-bottom: 8px;
+}
+
+.footer__mail, .footer__tel {
+  display: flex;
+  align-items: center;
+  &:before {
+    width: 20px;
+    height: 20px;
+
+    margin-right: 8px;
+  }
+}
+
+.footer__mail:before {
+  content: url("../images/mail_outline.svg");
+}
+
+.footer__tel:before {
+  content: url("../images/add_ic_call.svg");
+}
