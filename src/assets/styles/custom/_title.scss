@@ -19,7 +19,7 @@
 @include media('large'){
   .title {
     font-family: $font-primary;
-    font-size: 48px;
+    font-size: 32px;
   }
 
   .title_h1 {
@@ -28,19 +28,35 @@
     line-height: 140%;
   }
 
-  .title_lg_black {
+  .title_lg-black {
     color: $black;
+  }
+
+  .title_lg-h3 {
+    font-size: 38px;
   }
 }
 
 @include media('xlarge') {
+  .title {
+    font-size: 40px;
+  }
   .title_h1 {
     font-size: 60px;
+  }
+  .title_lg-h3 {
+    font-size: 38px;
   }
 }
 
 @include media('xxlarge') {
+  .title {
+    font-size: 48px;
+  }
   .title_h1 {
     font-size: 74px;
+  }
+  .title_lg-h3 {
+    font-size: 38px;
   }
 }

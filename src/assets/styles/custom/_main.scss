@@ -2,8 +2,159 @@
   padding-top: calc($header-inner-height + 2* $header-padding-y);
 }
 
+.main__item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.main__wrapper_center {
+  .main__title, .main__text{
+    text-align: center;
+  }
+}
+
+.main__title, .main__text {
+  margin-bottom: 16px;
+}
+
+.main__title {
+  text-align: center;
+}
+
+.main__image {
+  min-height: 154px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+.main__image_sm {
+  min-height: 101px;
+}
+
+.main__image_lg {
+  min-height: 200px;
+}
+
+.main__image_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+
+  z-index: -1;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.main__link {
+  display: inline-block;
+  width: max-content;
+  padding: 14px 32px;
+
+  background: #0D7A94;
+  border-radius: 16px;
+
+  span {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 120%;
+    /* identical to box height, or 17px */
+
+    color: $white;
+  }
+}
+
+.main_bg-gray {
+  background: $gray;
+}
+
+.main_py {
+  padding: 40px;
+}
+
 @include media('large') {
   .main {
     padding-top: calc($header-inner-height-lg + 2 * $header-padding-y-lg);
+  }
+
+  .main__item {
+    margin-bottom: 120px;
+  }
+
+  .main__wrapper_lg-left {
+    .main__title, .main__text{
+      text-align: left;
+    }
+  }
+
+  .main__title, .main__text {
+    margin-bottom: 32px;
+  }
+
+  .main__title {
+    margin-bottom: 32px;
+
+    text-align: left;
+  }
+
+  .main__image {
+    min-height: 372px;
+
+    img {
+      border-radius: 32px;
+    }
+  }
+
+  .main__image_sm {
+    min-height: 350px;
+  }
+
+  .main__image_lg {
+    min-height: 430px;
+  }
+
+  .main__image_bg {
+    position: static;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+
+    z-index: 0;
+  }
+
+  .main__link {
+    padding: 18px 32px;
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+  .main_lg-bg-none{
+    background: none;
+  }
+
+  .main_lg-bg-light {
+    background: $light;
+  }
+  .main_lg-py {
+    padding: 60px 0;
+  }
+
+  .main_lg-py-none {
+    padding: 0;
   }
 }

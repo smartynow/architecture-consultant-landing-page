@@ -1,12 +1,16 @@
 :root {
   --black: #111111;
   --dark-gray: #444444;
+  --gray: #D9D9D9;
+  --light: #F6F6F6;
   --white: #FFFFFF;
   --light-blue: #F2FDFF;
 }
 
 $black: var(--black);
 $dark-gray: var(--dark-gray);
+$gray: var(--gray);
+$light: var(--light);
 $white: var(--white);
 $light-blue: var(--light-blue);
 
@@ -15,7 +19,7 @@ $text-secondary: $dark-gray;
 
 $bg-primary: $light-blue;
 $bg-secondary: $white;
-$bg-tertiary: $black;
+$bg-tertiary: $light;
 
 $font-primary: 'Plus Jakarta Sans';
 $font-secondary: 'Manrope';
