@@ -1,0 +1,46 @@
+.title {
+  font-family: $font-secondary;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 150%;
+  text-transform: uppercase;
+
+  color: $black;
+}
+
+.title_white {
+  color: $white;
+}
+
+.title_h1 {
+  font-size: 28px;
+}
+
+@include media('large'){
+  .title {
+    font-family: $font-primary;
+    font-size: 48px;
+  }
+
+  .title_h1 {
+    font-family: $font-secondary;
+    font-size: 50px;
+    line-height: 140%;
+  }
+
+  .title_lg_black {
+    color: $black;
+  }
+}
+
+@include media('xlarge') {
+  .title_h1 {
+    font-size: 60px;
+  }
+}
+
+@include media('xxlarge') {
+  .title_h1 {
+    font-size: 74px;
+  }
+}

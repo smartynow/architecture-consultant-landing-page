@@ -1,5 +1,6 @@
 .main {
   padding-top: calc($header-inner-height + 2* $header-padding-y);
+
   .main-home {
     background: $bg-secondary;
 
@@ -7,31 +8,9 @@
 
     padding-top: 45px;
 
-    .container {
-    }
-
-    &__title {
+    &__title, &__text {
       position: relative;
       z-index: 2;
-      
-      font-family: $font-secondary;
-      font-weight: 800;
-      font-size: 28px;
-      line-height: 150%;
-      color: white;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    &__text {
-      position: relative;
-      z-index: 2;
-      
-      font-family: $font-secondary;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 160%;
-      color: white;
       text-align: center;
     }
 
@@ -66,13 +45,13 @@
       font-weight: 700;
       font-size: 12px;
       line-height: 150%;
-      /* or 24px */
       text-transform: uppercase;
 
       color: $font-primary;
     }
   }
 }
+
 
 @include media('small') {
   .main {
@@ -102,10 +81,6 @@
       }
 
       &__title {
-        color: $text-primary;
-
-        font-size: 50px;
-        line-height: 140%;
         text-align: left;
 
         margin-bottom: 27px;
@@ -115,10 +90,6 @@
       }
 
       &__text {
-        color: $text-secondary;
-
-        font-size: 20px;
-        line-height: 170%;
         text-align: left;
 
         grid-row: 2/3;
@@ -171,9 +142,6 @@
 @include media('xlarge') {
   .main {
     .main-home {
-      &__title {
-        font-size: 60px;
-      }
 
       &__counter {
         font-size: 24px;
@@ -188,9 +156,6 @@
 @include media('xxlarge') {
   .main {
     .main-home {
-      &__title {
-        font-size: 74px;
-      }
 
       &__counter {
         span {

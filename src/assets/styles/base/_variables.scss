@@ -1,9 +1,21 @@
-$text-primary: #111111;
-$text-secondary: #444444;
+:root {
+  --black: #111111;
+  --dark-gray: #444444;
+  --white: #FFFFFF;
+  --light-blue: #F2FDFF;
+}
 
-$bg-primary: #F2FDFF;
-$bg-secondary: #FFFFFF;
-$bg-tertiary: #111111;
+$black: var(--black);
+$dark-gray: var(--dark-gray);
+$white: var(--white);
+$light-blue: var(--light-blue);
+
+$text-primary: $black;
+$text-secondary: $dark-gray;
+
+$bg-primary: $light-blue;
+$bg-secondary: $white;
+$bg-tertiary: $black;
 
 $font-primary: 'Plus Jakarta Sans';
 $font-secondary: 'Manrope';

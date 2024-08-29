@@ -1,0 +1,36 @@
+.text {
+  font-family: $font-secondary;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+
+  color: $dark-gray;
+}
+
+.text_white {
+  color: $white;
+}
+
+@include media('large') {
+  .text {
+    font-family: $font-primary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+
+    color: $dark-gray;
+  }
+
+  .text_lg_dark-gray {
+    color: $dark-gray;
+  }
+
+  .text_lg_h1 {
+    font-family: $font-secondary;
+    font-size: 20px;
+    line-height: 170%;
+  }
+}
+
