@@ -79,7 +79,7 @@
       font-size: $font-size-base-lg;
       transition: $transition;
 
-      &.active {
+      &:hover, &.active {
         font-weight: 700;
       }
     }
@@ -175,9 +175,6 @@
         &:last-child {
           margin:0;
         }
-      }
-
-      &-link {
       }
     }
 
