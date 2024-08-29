@@ -5,6 +5,8 @@
 .main__item {
   position: relative;
   margin-bottom: 40px;
+
+  scroll-margin-top: calc($header-inner-height + 2* $header-padding-y);
 }
 
 .main__wrapper_center {
@@ -91,6 +93,7 @@
 
   .main__item {
     margin-bottom: 120px;
+    scroll-margin-top: calc($header-inner-height-lg + 2* $header-padding-y-lg);
   }
 
   .main__wrapper_lg-left {
