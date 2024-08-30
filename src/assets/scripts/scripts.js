@@ -20,6 +20,7 @@ $(document).ready(() => {
         speed: 500,
     });
     // ... other scripts
+    //TODO Закрытие мобильного меню при клике на ссылку
     $('.header__mobile-nav').on('click', () => {
         $('.header').toggleClass('active');
     })
