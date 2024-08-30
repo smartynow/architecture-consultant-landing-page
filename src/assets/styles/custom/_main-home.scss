@@ -168,6 +168,15 @@ $main-home-counters-height-lg: auto;
 }
 
 @include media('xlarge') {
+  .main-home__counter {
+    font-size: 24px;
+    span {
+      font-size: 32px;
+    }
+  }
+}
+
+@include media('xxlarge') {
   .main-home__cards {
     height: $main-home-cards-height-lg;
   }
@@ -181,16 +190,6 @@ $main-home-counters-height-lg: auto;
       border-radius: 24px;
     }
   }
-
-  .main-home__counter {
-    font-size: 24px;
-    span {
-      font-size: 32px;
-    }
-  }
-}
-
-@include media('xxlarge') {
   .main-home__counter {
     span {
       font-size: 48px;
