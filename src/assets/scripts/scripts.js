@@ -19,7 +19,6 @@ $(document).ready(() => {
         zoom: true,
         speed: 500,
     });
-
     // ... other scripts
     $('.header__mobile-nav').on('click', () => {
         $('.header').toggleClass('active');
