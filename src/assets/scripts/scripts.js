@@ -1,6 +1,26 @@
 $(document).ready(() => {
+    // Initialize AOS
     AOS.init();
+    // Initialize lightGallery
+    lightGallery(document.getElementById('main-home-cards'), {
+        plugins: [lgZoom, lgThumbnail],
+        licenseKey: '0000-0000-000-0000',
+        thumbnail: true,
+        download: false,
+        zoom: true,
+        speed: 500,
+    });
 
+    lightGallery(document.getElementById('projects-gallery'), {
+        plugins: [lgZoom, lgThumbnail],
+        licenseKey: '0000-0000-000-0000',
+        thumbnail: true,
+        download: false,
+        zoom: true,
+        speed: 500,
+    });
+
+    // ... other scripts
     $('.header__mobile-nav').on('click', () => {
         $('.header').toggleClass('active');
     })

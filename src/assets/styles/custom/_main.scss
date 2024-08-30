@@ -1,5 +1,7 @@
 .main {
   padding-top: calc($header-inner-height + 2* $header-padding-y);
+
+  scroll-behavior: smooth;
 }
 
 .main__item {
