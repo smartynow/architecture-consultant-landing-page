@@ -3,7 +3,8 @@ $main-home-inner-mb-lg: 0;
 
 $main-home-cards-height: 70px;
 $main-home-cards-height-sm: 78px;
-$main-home-cards-height-lg: 110px;
+$main-home-cards-height-xl: 95px;
+$main-home-cards-height-xxl: 110px;
 
 $main-home-counters-height: 36px;
 $main-home-counters-height-sm: 48px;
@@ -168,6 +169,9 @@ $main-home-counters-height-lg: auto;
 }
 
 @include media('xlarge') {
+  .main-home__cards {
+    height: $main-home-cards-height-xl;
+  }
   .main-home__counter {
     font-size: 24px;
     span {
@@ -178,7 +182,7 @@ $main-home-counters-height-lg: auto;
 
 @include media('xxlarge') {
   .main-home__cards {
-    height: $main-home-cards-height-lg;
+    height: $main-home-cards-height-xxl;
   }
 
   .main-home__card{
