@@ -60,13 +60,27 @@ $(document).ready(() => {
     //
     // $(window).on('scroll', handleScroll);
 
+    function debounce(func, delay) {
+        let timeoutId;
+        return function (...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => func.apply(this, args), delay);
+        };
+    }
+
     class Navigation {
-        constructor(headerSelector = ".header", navSelector = ".nav") {
+        constructor(sectionsSelector = '.main__item', headerSelector = ".header", navSelector = ".nav") {
+            // Select section elements
+            this.sections = document.querySelectorAll(sectionsSelector);
+            if (!this.sections)
+                throw new Error(
+                    `Elements with selector "${sectionsSelector}" not found`
+                );
             // Select header element
             this.header = document.querySelector(headerSelector);
             if (!this.header)
                 throw new Error(
-                    `Navigation element with selector "${headerSelector}" not found`
+                    `Element with selector "${headerSelector}" not found`
                 );
             // Select main navigation element
             this.nav = document.querySelector(navSelector);
@@ -94,34 +108,51 @@ $(document).ready(() => {
             this.hamburger.addEventListener("click", () => {
                 this.toggleMobileMenu();
             });
-
-            this.initDesktopMenu();
-
-            this.handleResize();
-        }
-
-        // Initialize desktop menu
-        initDesktopMenu() {
-            this.hamburger.removeEventListener("click", () => {
-                this.toggleMobileMenu();
-            });
             this.navItemsLeft.addEventListener("click", (event) => {
                 this.smoothScroll(event);
             });
             this.navItemsRight.addEventListener("click", (event) => {
                 this.smoothScroll(event);
+
             });
+
+            this.handleScroll();
+            this.handleResize();
+            window.addEventListener('scroll', this.handleScroll.bind(this));
         }
 
         //
         handleResize() {
-            window.addEventListener("resize", () => {
+            const debouncedResize = debounce(() => {
                 this.mobileView = this.reviewViewport();
-            });
+            }, 250);
+            window.addEventListener("resize", debouncedResize);
         }
 
-        reviewViewport() {
-            return window.innerWidth < 992;
+        handleScroll() {
+            const debouncedScroll = debounce(() => {
+                this.sections.forEach((section) => {
+                    const menuSelector = '.nav__link';
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+
+                    if (window.pageYOffset >= sectionTop - (sectionHeight * .5)) {
+                        const sectionId = section.getAttribute('id');
+                        const menuItem = document.querySelector(`${menuSelector}[href="#${sectionId}"]`);
+
+                        // Remove active class from all menu items
+                        this.removeActiveClass(menuSelector);
+
+                        // Add active class to the corresponding menu item
+                        this.addActiveClass(menuItem);
+                    }
+                })
+            }, 100);
+            window.addEventListener('scroll', debouncedScroll);
+        }
+
+        reviewViewport(bp = 992) {
+            return window.innerWidth < bp;
         }
         // Toggle mobile menu visibility
         toggleMobileMenu() {
@@ -202,11 +233,23 @@ $(document).ready(() => {
             if (mobileNavItems) {
                 this.header.classList.remove(this.activeClass);
 
-                setTimeout(() => {
+
+                if (mobileNavItems) {
                     mobileNavItems.remove();
                     mobileNavItems.removeEventListener("click", (event) => this.smoothScroll(event));
-                }, 500);
+                }
             }
+        }
+
+        // Helper method to handle transition end event
+        onTransitionEnd(element, callback) {
+            const transitionEndHandler = (event) => {
+                if (event.target === element) {
+                    element.removeEventListener("transitionend", transitionEndHandler);
+                    callback();
+                }
+            };
+            element.addEventListener("transitionend", transitionEndHandler);
         }
     }
 
