@@ -74,6 +74,7 @@ $(document).ready(() => {
                 throw new Error(
                     `Navigation element with selector "${navSelector}" not found`
                 );
+            this.mobileView = window.innerWidth < 992;
 
             // Select key elements
             this.hamburger = this.header.querySelector(".nav__btn");
@@ -90,15 +91,20 @@ $(document).ready(() => {
 
         // Initialize event listeners
         init() {
-            if (window.innerWidth < 992) {
-                this.hamburger.addEventListener("click", () => {
-                    this.toggleMobileMenu();
-                });
-            } else {
-                this.hamburger.removeEventListener("click", () => {
-                    this.toggleMobileMenu();
-                });
-            }
+            this.mobileView ? this.hamburger.addEventListener("click", () => this.toggleMobileMenu()) : this.initDesktopMenu();
+        }
+
+        // Initialize desktop menu
+        initDesktopMenu() {
+            this.hamburger.removeEventListener("click", () => {
+                this.toggleMobileMenu();
+            });
+            this.navItemsLeft.addEventListener("click", (event) => {
+                this.smoothScroll(event);
+            });
+            this.navItemsRight.addEventListener("click", (event) => {
+                this.smoothScroll(event);
+            });
         }
 
         // Toggle mobile menu visibility
@@ -111,7 +117,7 @@ $(document).ready(() => {
                 this.removeMobileMenu();
             }
         }
-
+        // Add event listener to mobile menu items
         smoothScroll(event) {
             const target = event.target;
 
@@ -121,11 +127,28 @@ $(document).ready(() => {
                 if (targetSection) {
                     event.preventDefault();
                     targetSection.scrollIntoView({ behavior: 'smooth' });
-                    this.toggleMobileMenu();
+                    // Close mobile menu after scrolling
+                    this.mobileView && this.toggleMobileMenu();
+                    // Remove active class to navigation items
+                    !this.mobileView && this.removeActiveClass(".nav__link");
+                    // Add active class to clicked item
+                    !this.mobileView && this.addActiveClass(target);
                 } else {
                     console.error(`Current section with ID "${targetId}" undefined`);
                 }
             }
+        }
+        // Remove active class to navigation items
+        removeActiveClass(selector) {
+            const elements = document.querySelectorAll(selector);
+
+            elements.forEach((element) => {
+                element.classList.remove(this.activeClass);
+            });
+        }
+
+        addActiveClass(el) {
+            el.classList.add(this.activeClass);
         }
 
         // Create and display mobile menu
