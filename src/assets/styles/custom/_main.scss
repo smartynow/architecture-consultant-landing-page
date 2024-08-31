@@ -133,6 +133,7 @@
 
   .main__image {
     img {
+      min-height: 350px;
       max-height: 372px;
       border-radius: 32px;
     }
@@ -140,12 +141,14 @@
 
   .main__image_sm {
     img {
+      min-height: 320px;
       max-height: 350px;
     }
   }
 
   .main__image_lg {
     img {
+      min-height: 400px;
       max-height: 430px;
     }
 
