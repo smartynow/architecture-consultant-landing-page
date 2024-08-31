@@ -11,8 +11,9 @@
 .nav__items {
   @include flex-center;
   flex-direction: column;
-  &__left {}
-  &__right {}
+  &_left, &_right {
+    display: none;
+  }
 }
 
 .nav__item {
@@ -49,10 +50,8 @@
 
     transition: $transition;
   }
-}
 
-.active {
-  .nav__btn {
+  &_active {
     z-index: 5;
     span {
       background: $text-primary;
@@ -84,6 +83,13 @@
 
   .nav__items {
     flex-direction: row;
+    &_left, &_right {
+      display: flex;
+    }
+
+    &_mobile {
+      display: none;
+    }
   }
 
   .nav__item {
