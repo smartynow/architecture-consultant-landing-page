@@ -123,11 +123,19 @@ $(document).ready(() => {
 
         //
         handleResize() {
+            let previousWidth = window.innerWidth;
             const debouncedResize = debounce(() => {
-                this.mobileView = this.reviewViewport();
+                const currentWidth = window.innerWidth;
+
+                if (previousWidth !== currentWidth) {
+                    this.mobileView = this.reviewViewport();
+                    previousWidth = currentWidth;
+                }
             }, 250);
+
             window.addEventListener("resize", debouncedResize);
         }
+
 
         handleScroll() {
             const debouncedScroll = debounce(() => {
