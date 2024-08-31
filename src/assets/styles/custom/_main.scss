@@ -26,22 +26,31 @@
 }
 
 .main__image {
-  min-height: 154px;
-
   img {
     width: 100%;
     height: 100%;
+    max-height: 154px;
     object-fit: cover;
     border-radius: 12px;
   }
 }
 
 .main__image_sm {
-  min-height: 101px;
+  img {
+    max-height: 101px;
+  }
 }
 
 .main__image_lg {
-  min-height: 200px;
+  img {
+    max-height: 200px;
+  }
+}
+
+.main__image_quad {
+  img {
+    aspect-ratio: 75/64;
+  }
 }
 
 .main__image_bg {
@@ -123,19 +132,23 @@
   }
 
   .main__image {
-    min-height: 372px;
-
     img {
+      max-height: 372px;
       border-radius: 32px;
     }
   }
 
   .main__image_sm {
-    min-height: 350px;
+    img {
+      max-height: 350px;
+    }
   }
 
   .main__image_lg {
-    min-height: 430px;
+    img {
+      max-height: 430px;
+    }
+
   }
 
   .main__image_bg {
