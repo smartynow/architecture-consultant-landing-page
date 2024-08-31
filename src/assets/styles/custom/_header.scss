@@ -44,7 +44,7 @@
 }
 
 .header__logo {
-  flex: 1 0 auto;
+  flex: 0 0 32px;
 
   &_mobile {
     @include flex-center;

@@ -27,7 +27,7 @@
 
   @include hover-effect;
 
-  .active {
+  &.active {
     text-shadow: 0.7px 0 0 currentColor;
   }
 }
@@ -51,20 +51,22 @@
   }
 }
 
-.nav__btn.active {
-  z-index: 5;
-  span {
-    background: $text-primary;
-    &:nth-child(1) {
-      @include absolute-center-y;
-      transform: rotateZ(-45deg);
-    }
-    &:nth-child(2) {
-      opacity: 0;
-    }
-    &:nth-child(3) {
-      @include absolute-center-y;
-      transform: rotateZ(45deg);
+.active {
+  .nav__btn {
+    z-index: 5;
+    span {
+      background: $text-primary;
+      &:nth-child(1) {
+        @include absolute-center-y;
+        transform: rotateZ(-45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        @include absolute-center-y;
+        transform: rotateZ(45deg);
+      }
     }
   }
 }

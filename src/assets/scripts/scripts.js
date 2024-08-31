@@ -19,25 +19,26 @@ $(document).ready(() => {
         zoom: true,
         speed: 500,
     });
-    // ... other scripts
-    //TODO Закрытие мобильного меню при клике на ссылку
-    $('.header__mobile-nav').on('click', () => {
+    //Navigation
+    $('.nav__btn').on('click', () => {
         $('.header').toggleClass('active');
     })
 
-    $('.header__nav-link').on('click', (e) => {
-        $('.header__nav-link').removeClass('active');
+    $('.nav__link').on('click', (e) => {
+        $('.nav__link').removeClass('active');
         const headerHeight = $('.header').outerHeight();
+        $('.header').removeClass('active');
 
         $(e.currentTarget).addClass('active');
         const targetId = $(e.currentTarget).attr('href');
         const targetSection = $(`${targetId}`);
-        console.log(headerHeight);
 
         if (targetSection.length) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            $('html, body').animate({
+                scrollTop: targetSection.offset().top - $('.header').outerHeight()
+            }, 500); // Adjust the duration (in milliseconds) as needed
         } else {
-            console.error(`Current section with ID "${targetId}" unfinded`);
+            console.error(`Current section with ID "${targetId}" undefined`);
         }
     })
 
@@ -46,13 +47,12 @@ $(document).ready(() => {
             const $section = $(this);
             const sectionTop = $section.offset().top;
             const sectionHeight = $section.outerHeight();
-            console.log(sectionTop);
 
             if ($(window).scrollTop() >= sectionTop - (sectionHeight * 0.5)) {
                 const sectionId = $section.attr('id');
-                const menuItem = $(`${'.header__nav-link'}[href="#${sectionId}"]`);
+                const menuItem = $(`${'.nav__link'}[href="#${sectionId}"]`);
 
-                $('.header__nav-link').removeClass('active');
+                $('.nav__link').removeClass('active');
                 menuItem.addClass('active');
             }
         });
