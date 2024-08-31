@@ -74,7 +74,7 @@ $(document).ready(() => {
                 throw new Error(
                     `Navigation element with selector "${navSelector}" not found`
                 );
-            this.mobileView = window.innerWidth < 992;
+            this.mobileView = this.reviewViewport();
 
             // Select key elements
             this.hamburger = this.header.querySelector(".nav__btn");
@@ -91,7 +91,13 @@ $(document).ready(() => {
 
         // Initialize event listeners
         init() {
-            this.mobileView ? this.hamburger.addEventListener("click", () => this.toggleMobileMenu()) : this.initDesktopMenu();
+            this.hamburger.addEventListener("click", () => {
+                this.toggleMobileMenu();
+            });
+
+            this.initDesktopMenu();
+
+            this.handleResize();
         }
 
         // Initialize desktop menu
@@ -107,6 +113,16 @@ $(document).ready(() => {
             });
         }
 
+        //
+        handleResize() {
+            window.addEventListener("resize", () => {
+                this.mobileView = this.reviewViewport();
+            });
+        }
+
+        reviewViewport() {
+            return window.innerWidth < 992;
+        }
         // Toggle mobile menu visibility
         toggleMobileMenu() {
             this.hamburger.classList.toggle("nav__btn_active");
@@ -168,6 +184,7 @@ $(document).ready(() => {
             });
 
             this.navContainer.appendChild(mobileNavItems);
+            this.removeActiveClass('.nav__link');
 
             // Force reflow to ensure the initial state is applied before adding the 'active' class
             mobileNavItems.offsetHeight;
