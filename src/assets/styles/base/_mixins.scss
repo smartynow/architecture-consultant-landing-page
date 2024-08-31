@@ -49,3 +49,58 @@ $breakpoints: (
   }
 }
 //Media Queries End
+
+//Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between($ai: center) {
+  display: flex;
+  justify-content: space-between;
+  align-items: $ai;
+}
+//Flexbox End
+
+//Position
+@mixin fixed-top($top: 0) {
+  position: fixed;
+  top: $top;
+  left: 0;
+  right: 0;
+
+  z-index: 5;
+}
+@mixin absolute-top-left($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin absolute-center-x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin absolute-center-y {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+//Position End
+
+//Effects
+@mixin hover-effect {
+  transition: text-shadow $transition;
+  &:hover {
+    text-shadow: 0.7px 0 0 currentColor;
+  }
+}
+//Effects End

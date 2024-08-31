@@ -25,41 +25,43 @@
 <header class="header">
     <div class="container">
         <div class="header__inner">
-            <a class="header__logo d-lg-none" href="#">
+            <a class="header__logo header__logo_mobile" href="#">
                 <img src="./assets/images/logo.svg" alt="logotype">
             </a>
-            <nav class="header__nav">
-                <ul class="header__nav-items">
-                    <li class="header__nav-item">
-                        <a class="header__nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#mission">About</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#values">Services</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#consistency">Consultation</a>
-                    </li>
-                    <li class="header__nav-item d-none d-lg-block">
-                        <a class="header__logo" href="#">
-                            <img src="./assets/images/logo.svg" alt="logotype">
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a class="header__nav-link" href="#contact">Contact</a>
-                    </li>
 
-                </ul>
+            <nav class="header__nav nav">
+                <div class="nav__container">
+                    <ul class="nav__items nav__items_left">
+                        <li class="nav__item">
+                            <a class="nav__link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#mission">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#values">Consultation</a>
+                        </li>
+                    </ul>
+
+                    <a class="header__logo header__logo_desktop" href="#">
+                        <img src="./assets/images/logo.svg" alt="logotype">
+                    </a>
+
+                    <ul class="nav__items nav__items_right">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#consistency">Services</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
-            <button
-                    id="mobile-nav-button"
-                    class="header__mobile-nav"
-            >
+
+            <button id="mobile-nav-button" class="nav__btn">
                 <span></span><span></span><span></span>
             </button>
         </div>
