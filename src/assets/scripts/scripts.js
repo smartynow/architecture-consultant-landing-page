@@ -1,6 +1,8 @@
 $(document).ready(() => {
     // Initialize AOS
     AOS.init();
+    // Initialize MicroModal
+    MicroModal.init();
     // Initialize lightGallery
     lightGallery(document.getElementById('main-home-cards'), {
         plugins: [lgZoom, lgThumbnail],
