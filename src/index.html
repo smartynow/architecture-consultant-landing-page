@@ -32,10 +32,10 @@
                     <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
                 </header>
                 <main class="modal__content" id="modal-1-content">
-                    <label class="modal__label" for="name"><input id="name" type="text" placeholder="Enter Your Name"></label>
-                    <label class="modal__label" for="email"><input id="email" type="email" placeholder="Enter Your Email"></label>
-                    <label class="modal__label" for="tel"><input id="tel" type="tel" placeholder="Enter Your Phone Number"></label>
-                    <label class="modal__label" for="message"><textarea id="message" placeholder="Enter Your Message"></textarea></label>
+                    <label class="modal__label" for="name"><input id="name" type="text" placeholder="Enter Your Name" required minlength="3" maxlength="30"></label>
+                    <label class="modal__label" for="email"><input id="email" type="email" placeholder="Enter Your Email" required></label>
+                    <label class="modal__label" for="tel"><input id="tel" type="tel" placeholder="Enter Your Phone Number" required></label>
+                    <label class="modal__label" for="message"><textarea id="message" placeholder="Enter Your Message" maxlength="140" rows="5"></textarea></label>
                     <label class="modal__checkbox">
                         <input type="checkbox" id="privacy-policy" required>
                         I agree to the <a href="#">Privacy Policy</a>
@@ -304,6 +304,7 @@
 </footer>
 <script src="./assets/scripts/vendor/jquery/jquery-3.7.1.min.js"></script>
 <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.9/jquery.inputmask.min.js" integrity="sha512-F5Ul1uuyFlGnIT1dk2c4kB4DBdi5wnBJjVhL7gQlGh46Xn0VhvD8kgxLtjdZ5YN83gybk/aASUAlpdoWUjRR3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./assets/scripts/vendor/aos/aos.js"></script>
 <script src="./assets/scripts/vendor/lazysizes/lazysizes.min.js" async=""></script>
 <script src="./assets/scripts/vendor/lightgallery/lightgallery.min.js"></script>
