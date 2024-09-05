@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="./assets/styles/styles.min.css">
 </head>
 <body>
-<!-- TODO Add Modal window -->
 <!--Modal window-->
 <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
@@ -33,9 +32,13 @@
                     <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
                 </header>
                 <main class="modal__content" id="modal-1-content">
-                    <label for="name"><input id="name" type="text" placeholder="Enter Your Name"></label>
-                    <label for="email"><input id="email" type="email" placeholder="Enter Your Email"></label>
-                    <label for="message"><textarea id="message" placeholder="Enter Your Message"></textarea></label>
+                    <label class="modal__label" for="name"><input id="name" type="text" placeholder="Enter Your Name"></label>
+                    <label class="modal__label" for="email"><input id="email" type="email" placeholder="Enter Your Email"></label>
+                    <label class="modal__label" for="message"><textarea id="message" placeholder="Enter Your Message"></textarea></label>
+                    <label class="modal__checkbox">
+                        <input type="checkbox" id="privacy-policy" required>
+                        I agree to the <a href="#">Privacy Policy</a>
+                    </label>
                 </main>
                 <footer class="modal__footer">
                     <button type="submit" class="modal__btn modal__btn-primary">Submit</button>

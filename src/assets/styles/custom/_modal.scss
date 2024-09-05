@@ -103,16 +103,13 @@
     flex-direction: column;
 }
 
-.modal__form label {
+.modal__label {
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     font-weight: 500;
     font-size: 0.875rem;
     color: #333;
-}
-
-.modal__form input {
-    margin-bottom: 1rem;
 }
 
 .modal__form input[type="text"],
@@ -149,6 +146,41 @@
     min-height: 150px;
     resize: vertical;
 }
+
+.modal__checkbox {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #333;
+    gap: 0.5rem;
+}
+
+.modal__checkbox {
+    flex-direction: row;
+}
+
+.modal__checkbox input[type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.modal__checkbox a {
+    color: #0D7A94;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.modal__checkbox a:hover {
+    text-decoration: underline;
+}
+
+.modal__checkbox input[type="checkbox"]:focus {
+    outline: 2px solid #0D7A94;
+}
+
 
 /**************************\
   Demo Animation Style
