@@ -49,7 +49,7 @@
 
 .main__image_quad {
   img {
-    aspect-ratio: 75/74;
+    aspect-ratio: 1.07/1;
   }
 }
 
@@ -103,7 +103,7 @@
 }
 
 .main_py {
-  padding: 40px;
+  padding: 40px 0;
 }
 
 @include media('large') {
@@ -163,7 +163,7 @@
 
   .main__image_quad {
     img {
-      aspect-ratio: 75/64;
+      aspect-ratio: 1.2/1;
     }
   }
 

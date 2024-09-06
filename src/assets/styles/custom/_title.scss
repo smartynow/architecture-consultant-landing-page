@@ -20,6 +20,11 @@
   font-size: 24px !important;
 }
 
+.title_font-primary {
+  font-family: $font-primary;
+  font-weight: 700;
+}
+
 @include media('large'){
   .title {
     font-family: $font-primary;
