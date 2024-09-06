@@ -1,7 +1,7 @@
 $main-home-inner-mb: 16px;
 $main-home-inner-mb-lg: 0;
 
-$main-home-cards-height: 70px;
+$main-home-cards-height: 72px;
 $main-home-cards-height-sm: 78px;
 $main-home-cards-height-xl: 95px;
 $main-home-cards-height-xxl: 110px;
@@ -23,6 +23,10 @@ $main-home-counters-height-lg: auto;
   position: relative;
   z-index: 2;
   text-align: center;
+}
+
+.main-home__title {
+  margin-bottom: 10px;
 }
 
 .main-home__text {
@@ -50,7 +54,7 @@ $main-home-counters-height-lg: auto;
 }
 
 .main-home__card{
-  aspect-ratio: 1;
+  aspect-ratio: 1.08/1;
   margin-right: 5px;
 
   &:last-child {
@@ -72,21 +76,20 @@ $main-home-counters-height-lg: auto;
   font-family: $font-secondary;
   font-style: normal;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 150%;
   text-transform: uppercase;
 
   color: $text-secondary;
 }
 
-@include media('small') {
+@media screen and (min-width: 340px) {
   .main-home__counters {
     height: $main-home-counters-height-sm;
   }
   .main-home__counter, .main-home__counter > span {
     font-size: 16px;
   }
-
 }
 
 @include media('large') {
