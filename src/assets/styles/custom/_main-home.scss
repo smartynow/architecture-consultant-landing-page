@@ -54,7 +54,6 @@ $main-home-counters-height-lg: auto;
 }
 
 .main-home__card{
-  aspect-ratio: 1.08/1;
   margin-right: 5px;
 
   &:last-child {
@@ -84,6 +83,9 @@ $main-home-counters-height-lg: auto;
 }
 
 @media screen and (min-width: 360px) {
+  .main-home__card {
+    aspect-ratio: 1.08/1;
+  }
   .main-home__counters {
     height: $main-home-counters-height-sm;
   }
