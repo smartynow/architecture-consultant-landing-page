@@ -47,12 +47,6 @@
   }
 }
 
-.main__image_quad {
-  img {
-    aspect-ratio: 1.07/1;
-  }
-}
-
 .main__image_bg {
   position: absolute;
   top: 0;
@@ -95,6 +89,21 @@
   &:hover, &:focus {
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.main__project-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main__project-item {
+  flex: 1 1 33%;
+
+  img {
+    height: 100%;
+    aspect-ratio: 1.1/1;
   }
 }
 
@@ -161,7 +170,7 @@
     }
   }
 
-  .main__image_quad {
+  .main__project-item {
     img {
       aspect-ratio: 1.2/1;
     }
