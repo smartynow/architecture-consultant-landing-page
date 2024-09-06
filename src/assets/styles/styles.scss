@@ -5,3 +5,15 @@ body {
   position: relative;
   min-height: 100vh;
 }
+
+@media screen and (min-width: 340px){
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@include media('xxlarge') {
+  .container {
+    padding: 0 60px;
+  }
+}

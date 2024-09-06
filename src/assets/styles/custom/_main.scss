@@ -92,6 +92,20 @@
   }
 }
 
+.main__consistency-items {
+
+}
+
+.main__consistency-item {
+  flex: 1 1 auto;
+  margin-right: 15px;
+
+  &:last-child {
+    flex: 0 0 39%;
+    margin-right: 0;
+  }
+}
+
 .main__project-items {
   display: flex;
   align-items: center;
