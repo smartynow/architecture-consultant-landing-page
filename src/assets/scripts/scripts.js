@@ -233,4 +233,9 @@ $(document).ready(() => {
         console.error("Failed to initialize navigation:", error.message);
     }
 
+
+    $('.counter').counterUp({
+        delay: 10,
+        time: 1000
+    });
 })
