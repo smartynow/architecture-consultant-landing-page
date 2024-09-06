@@ -17,7 +17,8 @@
 }
 
 .title_modal {
-  font-size: 24px !important;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .title_font-primary {
@@ -44,6 +45,12 @@
   .title_lg-h3 {
     font-size: 38px;
   }
+
+  .title_modal {
+    line-height: 110%;
+    font-size: 24px;
+  }
+
 }
 
 @include media('xlarge') {
@@ -56,6 +63,10 @@
   .title_lg-h3 {
     font-size: 38px;
   }
+  .title_modal {
+    font-size: 24px;
+  }
+
 }
 
 @include media('xxlarge') {
@@ -68,4 +79,8 @@
   .title_lg-h3 {
     font-size: 38px;
   }
+  .title_modal {
+    font-size: 24px;
+  }
+
 }
