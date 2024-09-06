@@ -95,13 +95,13 @@ $main-home-counters-height-lg: auto;
 @include media('large') {
   .main-home {
     background: $bg-primary;
-    padding: 26px 0 60px 0;
+    padding: 0 0 60px 0;
+
 
     .container {
       display: grid;
       grid-template-columns: 56% 40%;
       column-gap: 4%;
-      row-gap: 2%;
       align-items: center;
     }
   }
@@ -111,6 +111,9 @@ $main-home-counters-height-lg: auto;
 
     grid-row: 1/2;
     grid-column: 1/2;
+
+    padding-top: 23px;
+    margin-bottom: 30px;
   }
 
   .main-home__text {
@@ -126,8 +129,9 @@ $main-home-counters-height-lg: auto;
     position: relative;
 
     img {
-      height: auto;
+      height: 100%;
       width: 100%;
+      object-fit: cover;
 
       border-radius: 32px;
     }
@@ -140,6 +144,10 @@ $main-home-counters-height-lg: auto;
       grid-row: 1/2;
       grid-column: 2/3;
     }
+  }
+
+  .main-home__text {
+    padding-top: 15px;
   }
 
   .main-home__cards {
@@ -200,6 +208,15 @@ $main-home-counters-height-lg: auto;
   .main-home__counter {
     span {
       font-size: 48px;
+    }
+  }
+
+  .main-home__image {
+    &:nth-child(2) {
+      height: 401px;
+    }
+    &:nth-child(3) {
+      height: 317px;
     }
   }
 }

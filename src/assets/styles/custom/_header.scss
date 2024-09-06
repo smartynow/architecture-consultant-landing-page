@@ -111,7 +111,7 @@
     &_desktop {
       @include flex-center;
 
-      margin: 0 $header-nav-spacing-lg;
+      margin: 0 calc(2*$header-nav-spacing-md);
     }
   }
 
@@ -120,5 +120,11 @@
     transform: translate(0);
     width: auto;
     height: auto;
+  }
+}
+
+@include media('xlarge') {
+  .header__logo_desktop {
+    margin: 0 calc(1.5 * $header-nav-spacing-xl);
   }
 }

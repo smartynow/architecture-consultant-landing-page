@@ -112,3 +112,13 @@
     display: none;
   }
 }
+
+@include media('xlarge') {
+  .nav__item {
+    margin-right: $header-nav-spacing-xl;
+
+    &:last-child {
+      margin:0;
+    }
+  }
+}
